@@ -23,7 +23,20 @@
     <li><a href="#contact">Contact</a></li>
     <li><a href="https://www.youtube.com/@sdstudiosmt" target="_blank">YouTube</a></li>
   </ul>
+  <button class="hamburger" id="hamburger">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
 </nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#services">Work</a>
+  <a href="#portfolio">Portfolio</a>
+  <a href="#about">About</a>
+  <a href="#contact">Contact</a>
+  <a href="https://www.youtube.com/@sdstudiosmt" target="_blank">YouTube</a>
+</div>
 
 <!-- ─── HERO ─── -->
 <section class="hero" id="home">
@@ -116,7 +129,7 @@
   </div>
 </section>
 
-<!-- ─── PORTFOLIO ─── -->
+  <!-- ─── PORTFOLIO ─── -->
 <section class="portfolio" id="portfolio">
 
   <div class="portfolio-header reveal">
@@ -124,89 +137,59 @@
     <h2>Recent Projects</h2>
   </div>
 
-  <!-- REAL ESTATE — 2 horizontal -->
+    <!-- BUSINESS -->
+  <div class="portfolio-category reveal">
+    <div class="portfolio-category-label">
+      <h3>Business</h3>
+    </div>
+    <div class="videos-2col">
+      <div class="yt-embed horizontal">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/8MnOqni1eKo?si=2BGhv9qvzNww8PXW" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
+      <div class="yt-embed horizontal">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/zuCtgqYAoEY?si=2xi_bqS6Lf_P1kLp" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
+  
+<!-- REAL ESTATE -->
   <div class="portfolio-category reveal">
     <div class="portfolio-category-label">
       <h3>Real Estate</h3>
     </div>
     <div class="videos-2col">
-
       <div class="yt-embed horizontal">
-        <!-- ★ REPLACE: paste your Real Estate YouTube video ID (e.g. dQw4w9WgXcQ) in the src below -->
-        <!-- <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID_1" allowfullscreen></iframe> -->
-        <div class="yt-placeholder">
-          <div class="yt-placeholder-icon"></div>
-          <span>Real Estate — Video 1</span>
-        </div>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/G3Nt4LrvQM4?si=q7HDvNYnEWYpn8Dz" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
       </div>
 
       <div class="yt-embed horizontal">
-        <!-- ★ REPLACE: paste your Real Estate YouTube video ID (e.g. dQw4w9WgXcQ) in the src below -->
-        <!-- <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID_2" allowfullscreen></iframe> -->
-        <div class="yt-placeholder">
-          <div class="yt-placeholder-icon"></div>
-          <span>Real Estate — Video 2</span>
-        </div>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/XsyUtqiRupg?si=g-jSsfVPFck4NO5E" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
       </div>
-
     </div>
   </div>
 
-  <!-- MUSIC — 1 vertical + 1 horizontal -->
+  <!-- MUSIC -->
   <div class="portfolio-category reveal">
     <div class="portfolio-category-label">
       <h3>Music</h3>
     </div>
     <div class="videos-mixed">
-
       <div class="yt-embed vertical">
-        <!-- ★ REPLACE: paste your Music vertical YouTube video ID below -->
-        <!-- <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID_3" allowfullscreen></iframe> -->
-        <div class="yt-placeholder">
-          <div class="yt-placeholder-icon"></div>
-          <span>Music — Vertical</span>
+        <video src="media/video/white rabbit (short).m4v" loop playsinline></video>
+        <div class="video-play-button">
+          <div class="play-icon"></div>
+        </div>
+        <div class="video-progress-bar">
+          <div class="video-progress-fill"></div>
         </div>
       </div>
-
       <div class="yt-embed horizontal">
-        <!-- ★ REPLACE: paste your Music horizontal YouTube video ID below -->
-        <!-- <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID_4" allowfullscreen></iframe> -->
-        <div class="yt-placeholder">
-          <div class="yt-placeholder-icon"></div>
-          <span>Music — Horizontal</span>
-        </div>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/6sXorQ5ndwM?si=pT_IPvJDFrxz765r" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
       </div>
-
     </div>
   </div>
 
-  <!-- BUSINESS — 1 vertical + 1 horizontal -->
-  <div class="portfolio-category reveal">
-    <div class="portfolio-category-label">
-      <h3>Business</h3>
-    </div>
-    <div class="videos-mixed">
 
-      <div class="yt-embed vertical">
-        <!-- ★ REPLACE: paste your Business vertical YouTube video ID below -->
-        <!-- <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID_5" allowfullscreen></iframe> -->
-        <div class="yt-placeholder">
-          <div class="yt-placeholder-icon"></div>
-          <span>Business — Vertical</span>
-        </div>
-      </div>
-
-      <div class="yt-embed horizontal">
-        <!-- ★ REPLACE: paste your Business horizontal YouTube video ID below -->
-        <!-- <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID_6" allowfullscreen></iframe> -->
-        <div class="yt-placeholder">
-          <div class="yt-placeholder-icon"></div>
-          <span>Business — Horizontal</span>
-        </div>
-      </div>
-
-    </div>
-  </div>
 
 </section>
 
@@ -325,6 +308,24 @@
     nav.classList.toggle('scrolled', window.scrollY > 60);
   });
 
+  // Hamburger toggle
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobileMenu');
+  const mobileLinks = mobileMenu.querySelectorAll('a');
+
+  hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('active');
+    mobileMenu.classList.toggle('active');
+  });
+
+  // Close menu when a link is clicked
+  mobileLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      hamburger.classList.remove('active');
+      mobileMenu.classList.remove('active');
+    });
+  });
+
   // ─── Reveal on scroll
   const reveals = document.querySelectorAll('.reveal');
   const observer = new IntersectionObserver(entries => {
@@ -337,6 +338,44 @@
   }, { threshold: 0.12 });
 
   reveals.forEach(el => observer.observe(el));
+
+  // ─── Video play button and progress bar
+  document.querySelectorAll('.video-play-button').forEach(button => {
+    const container = button.parentElement;
+    const video = container.querySelector('video');
+    const progressBar = container.querySelector('.video-progress-bar');
+    const progressFill = container.querySelector('.video-progress-fill');
+
+    button.addEventListener('click', (e) => {
+      if (video && video.tagName === 'VIDEO') {
+        if (video.paused) {
+          video.play();
+          button.style.opacity = '0';
+        } else {
+          video.pause();
+          button.style.opacity = '1';
+        }
+      }
+    });
+
+    // Update progress bar as video plays
+    if (video && progressBar) {
+      video.addEventListener('timeupdate', () => {
+        const percent = (video.currentTime / video.duration) * 100;
+        if (progressFill) {
+          progressFill.style.width = percent + '%';
+        }
+      });
+
+      // Allow seeking by clicking on progress bar
+      progressBar.addEventListener('click', (e) => {
+        const rect = progressBar.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const percent = x / rect.width;
+        video.currentTime = percent * video.duration;
+      });
+    }
+  });
 </script>
 </body>
 </html>
