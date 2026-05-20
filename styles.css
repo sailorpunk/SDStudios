@@ -105,7 +105,7 @@
     inset: 0;
     width: 100%; height: 100%;
     object-fit: cover;
-    opacity: 0.55;
+    opacity: 0.5;
   }
 
   .hero-overlay {
@@ -537,6 +537,109 @@
   .submit-btn:hover {
     background: var(--accent);
     color: var(--black);
+  }
+
+  /* ─── MODAL ─── */
+  .modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .modal.active {
+    display: flex;
+  }
+
+  .modal-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(6, 6, 8, 0.7);
+    backdrop-filter: blur(4px);
+  }
+
+  .modal-content {
+    position: relative;
+    z-index: 1001;
+    background: var(--mid);
+    border: 1px solid var(--border);
+    padding: 48px 40px;
+    max-width: 400px;
+    text-align: center;
+    border-radius: 8px;
+    animation: modalSlideIn 0.3s ease-out;
+  }
+
+  @keyframes modalSlideIn {
+    from {
+      opacity: 0;
+      transform: scale(0.95) translateY(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1) translateY(0);
+    }
+  }
+
+  .modal-close {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    background: none;
+    border: none;
+    color: var(--muted);
+    font-size: 1.8rem;
+    cursor: pointer;
+    padding: 0;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: color 0.2s;
+  }
+
+  .modal-close:hover {
+    color: var(--accent);
+  }
+
+  .modal-icon {
+    font-size: 3rem;
+    color: var(--accent);
+    margin-bottom: 16px;
+  }
+
+  .modal-content h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 300;
+    font-size: 1.8rem;
+    margin-bottom: 12px;
+  }
+
+  .modal-content p {
+    color: var(--muted);
+    font-size: 0.85rem;
+    margin-bottom: 24px;
+  }
+
+  .modal-close-btn {
+    padding: 12px 32px;
+    background: var(--accent);
+    border: none;
+    color: var(--black);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background 0.3s;
+    border-radius: 4px;
+  }
+
+  .modal-close-btn:hover {
+    background: rgba(200, 169, 110, 0.85);
   }
 
   /* ─── FOOTER ─── */

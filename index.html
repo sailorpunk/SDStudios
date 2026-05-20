@@ -40,7 +40,7 @@
 
 <!-- ─── HERO ─── -->
 <section class="hero" id="home">
-  <video src="media/video/bcforweb.mp4" autoplay muted loop playsinline></video>
+  <video src="media/video/hero.mp4" autoplay muted loop playsinline></video>
   <div class="hero-overlay"></div>
 
   <div class="hero-content">
@@ -69,21 +69,11 @@
   <div class="services-grid">
 
     <div class="service-card reveal">
-      <video src="media/video/george 4k no text.mp4" autoplay muted loop playsinline></video>
+      <video src="media/video/george(web).mp4" autoplay muted loop playsinline></video>
       <div class="service-card-overlay">
         <span class="service-card-number">01</span>
         <h3>Real Estate</h3>
         <p>Aerial drone footage and ground-level walkthroughs that sell properties faster and at premium price points.</p>
-        <a href="#contact" class="service-card-link">Inquire</a>
-      </div>
-    </div>
-
-    <div class="service-card reveal reveal-delay-1">
-      <img src="media/photo/concert.jpg" alt="Music Video Production" loading="lazy">
-      <div class="service-card-overlay">
-        <span class="service-card-number">02</span>
-        <h3>Music</h3>
-        <p>Music videos and live performance captures that elevate your sound with a visual identity to match.</p>
         <a href="#contact" class="service-card-link">Inquire</a>
       </div>
     </div>
@@ -94,6 +84,16 @@
         <span class="service-card-number">03</span>
         <h3>Business</h3>
         <p>Brand films, corporate promos, and social content that builds credibility and drives results for your company.</p>
+        <a href="#contact" class="service-card-link">Inquire</a>
+      </div>
+    </div>
+
+    <div class="service-card reveal reveal-delay-1">
+      <img src="media/photo/concert.jpg" alt="Music Video Production" loading="lazy">
+      <div class="service-card-overlay">
+        <span class="service-card-number">02</span>
+        <h3>Music</h3>
+        <p>Music videos and live performance captures that elevate your sound with a visual identity to match.</p>
         <a href="#contact" class="service-card-link">Inquire</a>
       </div>
     </div>
@@ -253,27 +253,27 @@
       </div>
     </div>
 
-    <form class="contact-form reveal reveal-delay-1" name="contact" action="/?success=true#contact" method="POST" data-netlify="true" netlify-honeypot="_honey">
+    <form class="contact-form reveal reveal-delay-1" id="contactForm" name="contact" method="POST" data-netlify="true" netlify-honeypot="_honey">
       <div class="form-honeypot">
         <input type="text" name="_honey" tabindex="-1" autocomplete="off">
       </div>
       <div class="form-row">
         <div class="form-group">
           <label for="fname">First Name</label>
-          <input type="text" id="fname" name="fname" placeholder="Steven">
+          <input type="text" id="fname" name="fname" placeholder="Steven" required>
         </div>
         <div class="form-group">
           <label for="lname">Last Name</label>
-          <input type="text" id="lname" name="lname" placeholder="DeZort">
+          <input type="text" id="lname" name="lname" placeholder="DeZort" required>
         </div>
       </div>
       <div class="form-group">
         <label for="email">Email</label>
-        <input type="email" id="email" name="email" placeholder="you@example.com">
+        <input type="email" id="email" name="email" placeholder="you@example.com" required>
       </div>
       <div class="form-group">
         <label for="service">Service</label>
-        <select id="service" name="service">
+        <select id="service" name="service" required>
           <option value="" disabled selected>Select a service…</option>
           <option value="real-estate">Real Estate</option>
           <option value="music">Music</option>
@@ -284,12 +284,24 @@
       </div>
       <div class="form-group">
         <label for="message">Message</label>
-        <textarea id="message" name="message" placeholder="Tell me about your project…"></textarea>
+        <textarea id="message" name="message" placeholder="Tell me about your project…" required></textarea>
       </div>
       <button type="submit" class="submit-btn">Send Message</button>
     </form>
   </div>
 </section>
+
+<!-- ─── SUCCESS MODAL ─── -->
+<div id="successModal" class="modal">
+  <div class="modal-overlay"></div>
+  <div class="modal-content">
+    <button class="modal-close" id="modalCloseBtn">&times;</button>
+    <div class="modal-icon">✓</div>
+    <h3>Message Sent!</h3>
+    <p>Thank you for reaching out. I'll get back to you as soon as possible.</p>
+    <button class="modal-close-btn" id="modalCloseBtnAlt">Close</button>
+  </div>
+</div>
 
 <!-- ─── FOOTER ─── -->
 <footer>
@@ -302,6 +314,56 @@
 </footer>
 
 <script>
+  // ─── Contact Form Handler ───
+  const contactForm = document.getElementById('contactForm');
+  const successModal = document.getElementById('successModal');
+  const modalCloseBtn = document.getElementById('modalCloseBtn');
+  const modalCloseBtnAlt = document.getElementById('modalCloseBtnAlt');
+
+  contactForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    // Create FormData from the form
+    const formData = new FormData(contactForm);
+
+    try {
+      // Submit to Netlify
+      const response = await fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams(formData).toString(),
+      });
+
+      if (response.ok) {
+        // Show success modal
+        successModal.classList.add('active');
+
+        // Reset form
+        contactForm.reset();
+      } else {
+        alert('There was an error sending your message. Please try again.');
+      }
+    } catch (error) {
+      console.error('Form submission error:', error);
+      alert('There was an error sending your message. Please try again.');
+    }
+  });
+
+  // Modal close handlers
+  modalCloseBtn.addEventListener('click', () => {
+    successModal.classList.remove('active');
+  });
+
+  modalCloseBtnAlt.addEventListener('click', () => {
+    successModal.classList.remove('active');
+  });
+
+  // Close modal when clicking the overlay
+  const modalOverlay = successModal.querySelector('.modal-overlay');
+  modalOverlay.addEventListener('click', () => {
+    successModal.classList.remove('active');
+  });
+
   // ─── Sticky nav
   const nav = document.getElementById('navbar');
   window.addEventListener('scroll', () => {
