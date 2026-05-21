@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 Disallow: /media/
 
-Sitemap: https://sdstudios.com/sitemap.xml
+Sitemap: https://stevendezort.com/sitemap.xml
