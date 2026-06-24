@@ -1,0 +1,15 @@
+BEGIN:VCARD
+VERSION:3.0
+FN;CHARSET=UTF-8:Steven Dezort
+N;CHARSET=UTF-8:Dezort;Steven;;;
+EMAIL;CHARSET=UTF-8;type=HOME,INTERNET:stevendezort@gmail.com
+EMAIL;CHARSET=UTF-8;type=WORK,INTERNET:steven.dezort@techworksmontana.com
+TEL;TYPE=CELL:9712802730
+ADR;CHARSET=UTF-8;TYPE=HOME:;;;Stevensville;MT;;UnitedStates
+ORG;CHARSET=UTF-8:SD Media / TechWorks MT
+URL;type=WORK;CHARSET=UTF-8:stevendezort.com
+X-SOCIALPROFILE;TYPE=linkedin:https://linkedin.com/in/stevendezort
+X-SOCIALPROFILE;TYPE=instagram:https://www.instagram.com/sd_media_mt
+X-SOCIALPROFILE;TYPE=TechWorks MT:https://techworksmontana.com
+REV:2026-06-24T17:50:49.070Z
+END:VCARD
