@@ -2,6 +2,7 @@ BEGIN:VCARD
 VERSION:3.0
 FN;CHARSET=UTF-8:Steven Dezort
 N;CHARSET=UTF-8:Dezort;Steven;;;
+PHOTO;TYPE=JPEG;VALUE=URI:https://stevendezort.com/photos/profile.jpg
 EMAIL;CHARSET=UTF-8;type=HOME,INTERNET:stevendezort@gmail.com
 EMAIL;CHARSET=UTF-8;type=WORK,INTERNET:steven.dezort@techworksmontana.com
 TEL;TYPE=CELL:9712802730
