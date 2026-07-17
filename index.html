@@ -173,6 +173,72 @@
   </div>
 </section>
 
+<!-- ─── REAL ESTATE SHOWCASE ─── -->
+<section class="real-estate-showcase" id="real-estate-showcase">
+  <div class="showcase-copy reveal">
+    <p class="section-label">Real Estate Media</p>
+    <h2>Showcase every property with cinematic clarity.</h2>
+    <p>From dramatic aerial reveals to elegant interior storytelling, I build listing packages that feel premium from the first scroll to the final inquiry. Every shoot is designed to help buyers connect emotionally with the space — fast.</p>
+
+    <div class="showcase-list">
+      <article>
+        <span>Drone Aerials</span>
+        <p>FAA-compliant drone coverage for exterior context, neighborhood perspective, and “wow” first impressions.</p>
+      </article>
+      <article>
+        <span>Photography</span>
+        <p>Clean, editorial-style stills for listings, brochures, and social promotion — crafted to highlight flow, light, and detail.</p>
+      </article>
+      <article>
+        <span>Video Production</span>
+        <p>Short-form cinematic videos that bring a property to life with movement, pacing, and polished post-production.</p>
+      </article>
+      <article>
+        <span>Matterport 3D Tours</span>
+        <p>Immersive 3D walkthroughs that give buyers a guided virtual tour, increasing confidence and engagement.</p>
+      </article>
+    </div>
+
+    <a href="#contact" class="hero-cta showcase-cta">Book a Listing Shoot</a>
+  </div>
+
+  <div class="showcase-media reveal reveal-delay-1">
+    <div class="showcase-carousel" aria-label="Real estate gallery">
+      <div class="carousel-track">
+        <figure class="carousel-slide active">
+          <img src="media/photo/realestate/house.jpg" alt="Real estate exterior showcase" loading="lazy">
+        </figure>
+        <figure class="carousel-slide">
+          <img src="media/photo/realestate/kitchen-2.jpg" alt="Real estate kitchen interior showcase" loading="lazy">
+        </figure>
+        <figure class="carousel-slide">
+          <img src="media/photo/realestate/Front%20door-3.jpg" alt="Real estate front entry showcase" loading="lazy">
+        </figure>
+        <figure class="carousel-slide">
+          <img src="media/photo/realestate/Fireplace.jpg" alt="Real estate fireplace highlight" loading="lazy">
+        </figure>
+      </div>
+
+      <div class="carousel-controls">
+        <button class="carousel-btn prev" type="button" aria-label="Show previous image">&#10094;</button>
+        <div class="carousel-dots" aria-hidden="true">
+          <button class="carousel-dot active" type="button" aria-label="Go to slide 1"></button>
+          <button class="carousel-dot" type="button" aria-label="Go to slide 2"></button>
+          <button class="carousel-dot" type="button" aria-label="Go to slide 3"></button>
+          <button class="carousel-dot" type="button" aria-label="Go to slide 4"></button>
+        </div>
+        <button class="carousel-btn next" type="button" aria-label="Show next image">&#10095;</button>
+      </div>
+    </div>
+
+    <div class="showcase-video">
+      <div class="yt-embed horizontal">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/G3Nt4LrvQM4?si=q7HDvNYnEWYpn8Dz" title="Real estate video showcase" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ─── SERVICES ─── -->
 <section class="services" id="services">
   <div class="services-header reveal">
@@ -523,6 +589,57 @@
   }, { threshold: 0.12 });
 
   reveals.forEach(el => observer.observe(el));
+
+  // ─── Real estate carousel
+  const carouselSlides = Array.from(document.querySelectorAll('.carousel-slide'));
+  const carouselDots = Array.from(document.querySelectorAll('.carousel-dot'));
+  const prevBtn = document.querySelector('.carousel-btn.prev');
+  const nextBtn = document.querySelector('.carousel-btn.next');
+  let carouselIndex = 0;
+  let carouselTimer;
+
+  function showCarouselSlide(index) {
+    carouselSlides.forEach((slide, slideIndex) => {
+      slide.classList.toggle('active', slideIndex === index);
+    });
+
+    carouselDots.forEach((dot, dotIndex) => {
+      dot.classList.toggle('active', dotIndex === index);
+    });
+  }
+
+  function moveCarousel(direction) {
+    carouselIndex = (carouselIndex + direction + carouselSlides.length) % carouselSlides.length;
+    showCarouselSlide(carouselIndex);
+  }
+
+  function startCarouselAutoplay() {
+    clearInterval(carouselTimer);
+    carouselTimer = setInterval(() => moveCarousel(1), 4500);
+  }
+
+  prevBtn?.addEventListener('click', () => {
+    moveCarousel(-1);
+    startCarouselAutoplay();
+  });
+
+  nextBtn?.addEventListener('click', () => {
+    moveCarousel(1);
+    startCarouselAutoplay();
+  });
+
+  carouselDots.forEach((dot, dotIndex) => {
+    dot.addEventListener('click', () => {
+      carouselIndex = dotIndex;
+      showCarouselSlide(carouselIndex);
+      startCarouselAutoplay();
+    });
+  });
+
+  if (carouselSlides.length) {
+    showCarouselSlide(0);
+    startCarouselAutoplay();
+  }
 
   // ─── Video play button and progress bar
   document.querySelectorAll('.video-play-button').forEach(button => {
