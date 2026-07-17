@@ -296,6 +296,30 @@
     overflow: hidden;
   }
 
+  .carousel-loader {
+    position: absolute;
+    inset: auto 0 0 0;
+    z-index: 3;
+    padding: 14px 16px 12px;
+    background: linear-gradient(to top, rgba(6,6,8,0.92), rgba(6,6,8,0.55));
+    display: grid;
+    gap: 8px;
+  }
+
+  .carousel-loader-bar {
+    width: 0%;
+    height: 4px;
+    background: linear-gradient(90deg, var(--accent), #f1d9a6);
+    transition: width 0.2s ease;
+  }
+
+  .carousel-loader span {
+    font-size: 0.56rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
   .carousel-slide {
     position: absolute;
     inset: 0;

@@ -205,17 +205,21 @@
   <div class="showcase-media reveal reveal-delay-1">
     <div class="showcase-carousel" aria-label="Real estate gallery">
       <div class="carousel-track">
+        <div class="carousel-loader" aria-hidden="true">
+          <div class="carousel-loader-bar"></div>
+          <span>Loading gallery</span>
+        </div>
         <figure class="carousel-slide active">
-          <img src="media/photo/realestate/house.jpg" alt="Real estate exterior showcase" loading="lazy">
+          <img src="media/photo/realestate/house.jpg" alt="Real estate exterior showcase" loading="eager">
         </figure>
         <figure class="carousel-slide">
-          <img src="media/photo/realestate/kitchen-2.jpg" alt="Real estate kitchen interior showcase" loading="lazy">
+          <img src="media/photo/realestate/kitchen-2.jpg" alt="Real estate kitchen interior showcase" loading="eager">
         </figure>
         <figure class="carousel-slide">
-          <img src="media/photo/realestate/Front%20door-3.jpg" alt="Real estate front entry showcase" loading="lazy">
+          <img src="media/photo/realestate/Front%20door-3.jpg" alt="Real estate front entry showcase" loading="eager">
         </figure>
         <figure class="carousel-slide">
-          <img src="media/photo/realestate/Fireplace.jpg" alt="Real estate fireplace highlight" loading="lazy">
+          <img src="media/photo/realestate/Fireplace.jpg" alt="Real estate fireplace highlight" loading="eager">
         </figure>
       </div>
 
@@ -595,6 +599,8 @@
   const carouselDots = Array.from(document.querySelectorAll('.carousel-dot'));
   const prevBtn = document.querySelector('.carousel-btn.prev');
   const nextBtn = document.querySelector('.carousel-btn.next');
+  const carouselLoader = document.querySelector('.carousel-loader');
+  const carouselLoaderBar = document.querySelector('.carousel-loader-bar');
   let carouselIndex = 0;
   let carouselTimer;
 
@@ -618,6 +624,49 @@
     carouselTimer = setInterval(() => moveCarousel(1), 4500);
   }
 
+  async function preloadCarouselImages() {
+    if (!carouselSlides.length) return;
+
+    const imageSources = carouselSlides.map(slide => slide.querySelector('img')?.src).filter(Boolean);
+    let loaded = 0;
+
+    if (carouselLoader) {
+      carouselLoader.style.display = 'grid';
+    }
+
+    await Promise.all(imageSources.map((src) => new Promise((resolve) => {
+      const img = new Image();
+      img.onload = () => {
+        loaded += 1;
+        const percent = Math.round((loaded / imageSources.length) * 100);
+        if (carouselLoaderBar) {
+          carouselLoaderBar.style.width = `${percent}%`;
+        }
+        resolve();
+      };
+      img.onerror = () => {
+        loaded += 1;
+        const percent = Math.round((loaded / imageSources.length) * 100);
+        if (carouselLoaderBar) {
+          carouselLoaderBar.style.width = `${percent}%`;
+        }
+        resolve();
+      };
+      img.src = src;
+    })));
+
+    if (carouselLoader) {
+      carouselLoader.style.opacity = '0';
+      carouselLoader.style.pointerEvents = 'none';
+      setTimeout(() => {
+        carouselLoader.style.display = 'none';
+      }, 250);
+    }
+
+    showCarouselSlide(0);
+    startCarouselAutoplay();
+  }
+
   prevBtn?.addEventListener('click', () => {
     moveCarousel(-1);
     startCarouselAutoplay();
@@ -636,10 +685,7 @@
     });
   });
 
-  if (carouselSlides.length) {
-    showCarouselSlide(0);
-    startCarouselAutoplay();
-  }
+  preloadCarouselImages();
 
   // ─── Video play button and progress bar
   document.querySelectorAll('.video-play-button').forEach(button => {
