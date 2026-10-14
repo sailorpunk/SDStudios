@@ -1,5 +1,6 @@
 User-agent: *
 Allow: /
+Allow: /media/photo/ogimg.jpg
 Disallow: /media/
 
 Sitemap: https://stevendezort.com/sitemap.xml

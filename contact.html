@@ -10,64 +10,72 @@
     gtag('config', 'G-D0V5H32298');
   </script>
 
+  <script>document.documentElement.classList.add('js');</script>
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>SD Media | Connect</title>
-  <meta name="description" content="Save Steven Dezort’s contact details directly to your phone with a downloadable vCard from SD Media.">
-  <link rel="icon" type="image/svg+xml" href="media/photo/apwhite2.png">
+  <title>SD.Media | Connect</title>
+  <meta name="description" content="Save Steven Dezort’s contact details directly to your phone with a downloadable vCard from SD.Media.">
+  <link rel="icon" type="image/png" href="media/photo/apwhite2.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;1,400&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-<nav id="navbar">
-  <a href="index.html" class="nav-logo">
-    <img src="media/photo/apwhite2.png" alt="SD Media logo aperture" class="nav-logo-icon">
-    SD<span>.</span>MEDIA
-  </a>
-  <ul class="nav-links">
-    <li><a href="index.html#services">Work</a></li>
-    <li><a href="index.html#portfolio">Portfolio</a></li>
-    <li><a href="index.html#about">About</a></li>
-    <li><a href="index.html#contact">Contact</a></li>
-    <li><a href="contact.html">Connect</a></li>
-    <li><a href="https://www.youtube.com/@sdmediamt" target="_blank" rel="noreferrer">YouTube</a></li>
-  </ul>
-  <button class="hamburger" id="hamburger" aria-label="Toggle menu">
-    <span></span>
-    <span></span>
-    <span></span>
-  </button>
-</nav>
+<header class="site-header solid" id="siteHeader">
+  <div class="container nav-inner">
+    <a href="index.html" class="nav-logo" aria-label="SD.Media home">
+      <svg viewBox="0 0 1024 1024" aria-hidden="true"><path d="M282.524257 470.5026L549.300031 1.355017q-18.468884-1.355017-37.290072-1.355017c-157.723995 0-298.781279 71.314552-392.697516 183.46932zM430.61408 292.832753h544.229083C903.867365 143.198211 762.471327 33.468923 593.50069 6.449882zM360.559694 690.448982L269.123138 529.676199l-10.203279-17.615223 0.081301-0.135502L92.293401 218.699766a512.887536 512.887536 0 0 0-60.325362 471.749216zM663.609277 333.551018l101.24688 178.049252 0.230353 0.135502-0.081301 0.135501 166.789059 293.30701a512.873986 512.873986 0 0 0 60.244062-471.627265zM741.549862 553.117995l-266.938376 469.526988q18.550185 1.355017 37.452674 1.355017c157.805296 0 298.943881-71.395853 392.860118-183.659023zM593.392289 731.180797H49.163206C120.139004 880.761139 261.521492 990.517527 430.546329 1017.617869z"/></svg>
+      SD<span class="dot">.</span>MEDIA
+    </a>
 
-<div class="mobile-menu" id="mobileMenu">
-  <a href="index.html#services">Work</a>
-  <a href="index.html#portfolio">Portfolio</a>
-  <a href="index.html#about">About</a>
-  <a href="index.html#contact">Contact</a>
-  <a href="contact.html">Connect</a>
-  <a href="https://www.youtube.com/@sdmediamt" target="_blank" rel="noreferrer">YouTube</a>
-</div>
+    <nav aria-label="Main">
+      <ul class="nav-links">
+        <li><a href="index.html#partnership">Partnership</a></li>
+        <li><a href="index.html#process">Process</a></li>
+        <li><a href="index.html#work">Work</a></li>
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="index.html#faq">FAQ</a></li>
+        <li><a href="index.html#contact" class="btn btn-primary btn-sm">Book a Strategy Call</a></li>
+      </ul>
+    </nav>
+
+    <button class="nav-toggle" id="navToggle" type="button" aria-expanded="false" aria-controls="mobileMenu" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <ul>
+      <li><a href="index.html#partnership">Partnership</a></li>
+      <li><a href="index.html#process">Process</a></li>
+      <li><a href="index.html#work">Work</a></li>
+      <li><a href="index.html#about">About</a></li>
+      <li><a href="index.html#faq">FAQ</a></li>
+    </ul>
+    <a href="index.html#contact" class="btn btn-primary">Book a Strategy Call</a>
+  </div>
+</header>
 
 <main class="connect-page-shell">
   <section class="connect-hero reveal">
-    <p class="section-label">Connect</p>
+    <p class="connect-label">Connect</p>
     <h1>Let’s keep in touch.</h1>
 
     <div class="connect-actions">
-      <a href="media/connect/vcard.vcf" class="hero-cta" download="Steven-Dezort.vcf">Save to Contacts</a>
+      <a href="media/connect/vcard.vcf" class="btn btn-primary" download="Steven-Dezort.vcf">Save to Contacts</a>
       
     </div>
   </section>
 
   <section class="connect-card reveal reveal-delay-1">
     <div class="connect-card-header">
-      <p class="section-label">Contact Details</p>
+      <p class="connect-label">Contact Details</p>
       <h2>Steven Dezort</h2>
-      <p class="connect-org">SD Media / TechWorks MT</p>
+      <p class="connect-org">SD.Media / TechWorks MT</p>
     </div>
 
     <div class="connect-details">
@@ -109,48 +117,44 @@
   </section>
 </main>
 
-<footer>
-  <a href="index.html" class="footer-logo">SD<span>.</span>MEDIA</a>
-  <span class="footer-copy">© 2026 SD Media · Missoula, MT</span>
-  <div class="footer-socials">
-    <a href="https://www.instagram.com/sd_media_mt/" target="_blank" rel="noreferrer">Instagram</a>
-    <a href="https://www.youtube.com/@sdmediamt" target="_blank" rel="noreferrer">YouTube</a>
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <a href="index.html" class="nav-logo" aria-label="SD.Media home">SD<span class="dot">.</span>MEDIA</a>
+    <span>© 2026 SD.Media · Missoula, MT</span>
+    <div class="footer-links">
+      <a href="mailto:contact@stevendezort.com">Email</a>
+      <a href="https://www.instagram.com/sd_media_mt/" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://www.youtube.com/@sdmediamt" target="_blank" rel="noopener">YouTube</a>
+    </div>
   </div>
 </footer>
 
 <script>
-  const nav = document.getElementById('navbar');
-  window.addEventListener('scroll', () => {
-    nav.classList.toggle('scrolled', window.scrollY > 60);
-  });
-
-  const hamburger = document.getElementById('hamburger');
+  const navToggle = document.getElementById('navToggle');
   const mobileMenu = document.getElementById('mobileMenu');
-  const mobileLinks = mobileMenu.querySelectorAll('a');
 
-  hamburger.addEventListener('click', () => {
-    hamburger.classList.toggle('active');
-    mobileMenu.classList.toggle('active');
-  });
-
-  mobileLinks.forEach(link => {
-    link.addEventListener('click', () => {
-      hamburger.classList.remove('active');
-      mobileMenu.classList.remove('active');
-    });
-  });
+  function setMenu(open) {
+    navToggle.setAttribute('aria-expanded', String(open));
+    navToggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+    mobileMenu.classList.toggle('open', open);
+  }
+  navToggle.addEventListener('click', () => setMenu(navToggle.getAttribute('aria-expanded') !== 'true'));
+  mobileMenu.querySelectorAll('a').forEach(link => link.addEventListener('click', () => setMenu(false)));
 
   const reveals = document.querySelectorAll('.reveal');
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-        observer.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.12 });
-
-  reveals.forEach(el => observer.observe(el));
+  if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    reveals.forEach(el => observer.observe(el));
+  } else {
+    reveals.forEach(el => el.classList.add('visible'));
+  }
 </script>
 </body>
 </html>
