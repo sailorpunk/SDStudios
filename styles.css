@@ -380,6 +380,7 @@ p { text-wrap: pretty; }
   border-radius: var(--radius);
 }
 .photo-grid img:first-child { grid-column: 1 / -1; aspect-ratio: 16 / 9; }
+.photo-grid .focus-plates { object-position: 50% 45%; } /* keeps both plates in the square and 4:5 crops */
 @media (min-width: 900px) {
   .photo-grid { grid-template-columns: repeat(3, 1fr); gap: 16px; }
   .photo-grid img,
